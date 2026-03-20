@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,58 +16,76 @@
 
 <body>
 
-<main class="container">
 
-    <!-- ===============================
+
+
+    <main>
+         <!-- ===============================
          HEADER (PRONTO)
-    =============================== -->
-    <header class="header">
-        <h1>Todo List</h1>
-        <p>Organize suas tarefas</p>
-    </header>
+         =============================== -->
+        <header>
+            <h1>Todo list</h1>
+            <p>Organize suas tarefas de forma moderna e eficiente</p>
+        </header>
 
-
-    <!-- ===============================
+         <!-- ===============================
          DESAFIO 1 (HTML)
          Aluno: deve montar os cards
-    =============================== -->
-    <section class="stats">
+         =============================== -->
+        <section>
+            <div>
+                <h2>0</h2>
+                <p>Total</p>
+            </div>
 
-        <!-- TODO: criar 3 cards -->
-        <!-- Dica: Total | Ativas | Completas -->
+            <div>
+                <h2>0</h2>
+                <p>Ativas</p>
+            </div>
 
-    </section>
+            <div>
+                <h2>0</h2>
+                <p>Completas</p>
+            </div>
+        </section>
 
-
-    <!-- ===============================
+        
+         <!-- ===============================
          ADD TASK (PRONTO)
-    =============================== -->
-    <section class="add-task">
-        <input type="text" placeholder="Nova tarefa...">
-        <button class="btn-add">Adicionar</button>
-    </section>
+         =============================== -->
+        <section>
+            <form>
+                <input type="text" placeholder="Digite uma nova tarefa">
+                <button type="submit">+ Adicionar</button>
+            </form>
+        </section>
 
-
-    <!-- ===============================
+         <!-- ===============================
          FILTROS (PARCIAL)
          Aluno: pode estilizar e melhorar
-    =============================== -->
-    <section class="filters">
-        <button class="filter active">Todas</button>
-        <button class="filter">Ativas</button>
-        <button class="filter">Completas</button>
-    </section>
+         =============================== -->
+        <nav>
+            <button>Todas</button>
+            <button>Ativas</button>
+            <button>Completas</button>
+        </nav>
+
+         <!-- ===============================
+         LISTA (PRONTA E VAZIA)
+         =============================== -->
+        <section>
+            <ul>
+                <li>Tarefa 1</li>
+                <li>Tarefa 2</li>
+            </ul>
+        </section>
+    </main>
 
 
-    <!-- ===============================
-        LISTA (PRONTA E VAZIA)
-    =============================== -->
-    <section class="tasks">
-        <!-- JS vai renderizar aqui -->
-    </section>
 
-</main>
+    <script src="script.js"></script>
 
-<script src="script.js"></script>
+
 </body>
+
 </html>
