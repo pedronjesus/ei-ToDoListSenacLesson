@@ -297,10 +297,3 @@ Você deve criar:
 📌 **Entrega até o dia 20/03 às 22h30**
 
 ⚠️ A presença está condicionada ao envio da Pull Request dentro do prazo.
-
----
-
-Se quiser, posso ainda:
-
-* criar os arquivos `ui-specification.md` e `development.md` já prontos pra você só colar no repo
-* ou montar um template de avaliação baseado nesses docs 👀
