@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Fonte -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
@@ -16,76 +16,76 @@
 
 <body>
 
+    <main class="container">
 
-
-
-    <main>
-         <!-- ===============================
-         HEADER (PRONTO)
-         =============================== -->
-        <header>
-            <h1>Todo list</h1>
-            <p>Organize suas tarefas de forma moderna e eficiente</p>
+        <!-- ===============================
+        HEADER
+        =============================== -->
+        <header class="header">
+            <h1 class="header-title">Todo list</h1>
+            <p class="header-subtitle">
+                Organize suas tarefas de forma moderna e eficiente
+            </p>
         </header>
 
-         <!-- ===============================
-         DESAFIO 1 (HTML)
-         Aluno: deve montar os cards
-         =============================== -->
-        <section>
-            <div>
-                <h2>0</h2>
-                <p>Total</p>
+        <!-- ===============================
+        CARDS (TOTAL / ATIVAS / COMPLETAS)
+        =============================== -->
+        <section class="stats-cards">
+            <div class="card card-total">
+                <h2 class="card-number">0</h2>
+                <p class="card-label">Total</p>
             </div>
 
-            <div>
-                <h2>0</h2>
-                <p>Ativas</p>
+            <div class="card card-active">
+                <h2 class="card-number">0</h2>
+                <p class="card-label">Ativas</p>
             </div>
 
-            <div>
-                <h2>0</h2>
-                <p>Completas</p>
+            <div class="card card-completed">
+                <h2 class="card-number">0</h2>
+                <p class="card-label">Completas</p>
             </div>
         </section>
 
-        
-         <!-- ===============================
-         ADD TASK (PRONTO)
-         =============================== -->
-        <section>
-            <form>
-                <input type="text" placeholder="Digite uma nova tarefa">
-                <button type="submit">+ Adicionar</button>
+        <!-- ===============================
+        ADD TASK
+        =============================== -->
+        <section class="add-task">
+            <form class="add-task-form">
+                <input 
+                    type="text" 
+                    class="add-task-input"
+                    placeholder="Digite uma nova tarefa"
+                >
+                <button type="submit" class="add-task-button">
+                    + Adicionar
+                </button>
             </form>
         </section>
 
-         <!-- ===============================
-         FILTROS (PARCIAL)
-         Aluno: pode estilizar e melhorar
-         =============================== -->
-        <nav>
-            <button>Todas</button>
-            <button>Ativas</button>
-            <button>Completas</button>
+        <!-- ===============================
+        FILTROS
+        =============================== -->
+        <nav class="filters">
+            <button class="filter-btn filter-all">Todas</button>
+            <button class="filter-btn filter-active">Ativas</button>
+            <button class="filter-btn filter-completed">Completas</button>
         </nav>
 
-         <!-- ===============================
-         LISTA (PRONTA E VAZIA)
-         =============================== -->
-        <section>
-            <ul>
-                <li>Tarefa 1</li>
-                <li>Tarefa 2</li>
+        <!-- ===============================
+        LISTA DE TAREFAS
+        =============================== -->
+        <section class="task-list">
+            <ul class="tasks">
+                <li class="task-item">Tarefa 1</li>
+                <li class="task-item">Tarefa 2</li>
             </ul>
         </section>
+
     </main>
 
-
-
-    <script src="script.js"></script>
-
+    <script src="script.js"> </script>
 
 </body>
-
 </html>
