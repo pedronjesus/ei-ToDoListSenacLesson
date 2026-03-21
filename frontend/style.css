@@ -1,100 +1,261 @@
-/* ===============================
-   RESET (PRONTO)
-=============================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto Mono', monospace;
-}
 
-/* ===============================
-   🎯 DESAFIO 2 (CSS)
-   👉 Criar variáveis de cor
-=============================== */
+/* =========================================
+   Paleta (azul claro) e tokens
+========================================= */
 :root {
-    /* TODO: criar cores do projeto */
+  --bg: #EEF6FF;
+  --surface: #FFFFFF;
+  --surface-soft: #F7FAFF;
+
+  --primary-400: #7CC6FF;  /* gradiente claro */
+  --primary-500: #4DA3FF;  /* principal */
+  --primary-600: #2F80ED;  /* acento/hover */
+
+  --text-900: #0F1B33;     /* títulos */
+  --text-600: #5D6B8A;     /* descrições */
+
+  --line: #E6EFFF;         /* bordas */
+  --input-border: #D7E6FF; /* borda de input */
+
+  --shadow-lg: 0 8px 22px rgba(77,163,255,0.18);
+  --shadow-sm: 0 3px 12px rgba(77,163,255,0.14);
 }
 
-/* ===============================
-   BODY (PRONTO)
-=============================== */
+/* =========================================
+   Reset
+========================================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+
 body {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    padding: 40px 20px;
-
-    /* TODO: adicionar background bonito */
+  font-family: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  color: var(--text-900);
+  background: radial-gradient(1200px 600px at 20% 0%, #F2F8FF 0%, var(--bg) 60%, #EAF2FF 100%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
 }
 
-/* ===============================
-   CONTAINER (BASE PRONTA)
-=============================== */
 .container {
     width: 100%;
-    max-width: 600px;
-    padding: 20px;
+    max-width: 700px;
+    background: var(--surface);
+    border: 1px solid #F2F7FF;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: var(--shadow-lg);
 }
+  
 
-/* ===============================
+    /* ===============================
    🎯 DESAFIO 3 (CSS)
    👉 Estilizar HEADER
-=============================== */
+    =============================== */
+
+
 .header {
-    text-align: center;
+        text-align: center;
+        margin-bottom: 25px;
 }
+      
+.header__title {
+
+    font-size: 28px;
+    color: var(--primary-600);
+    margin-bottom: 6px;
+    letter-spacing: 0.3px;
+
+}
+      
+.header__subtitle {
+
+    font-size: 14px;
+    color: var(--text-600);
+
+}
+      
+    
 
 /* ===============================
    🎯 DESAFIO 4 (CSS)
    👉 Criar layout dos CARDS
 =============================== */
+
 .stats {
-    margin: 20px 0;
+
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+
 }
+  
+.stat-card {
+
+    flex: 1;
+    background: var(--surface-soft);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+
+}
+  
+.stat-card__number {
+
+    font-size: 24px;
+    color: var(--primary-600);
+    margin-bottom: 4px;
+
+}
+  
+.stat-card__label {
+    font-size: 14px;
+    color: var(--text-600);
+}
+  
 
 /* ===============================
    ADD TASK (BASE)
 =============================== */
-.add-task {
-    display: flex;
-    gap: 10px;
+
+.add-task { margin-bottom: 20px;
+
 }
 
-.add-task input {
-    flex: 1;
-    padding: 10px;
+.add-task__form {
+
+  display: flex;
+  gap: 14px;
+
 }
 
-.btn-add {
-    cursor: pointer;
+.input {
+
+  flex: 1;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid var(--input-border);
+  background: #fff;
+  color: var(--text-900);
+  font-size: 14px;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+
 }
+
+.input::placeholder { 
+
+    color: #9AB6DA;
+
+}
+
+.input:focus {
+
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 4px rgba(77,163,255,0.15);
+  
+}
+
+/* Botões */
+.btn {
+
+  padding: 14px 20px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .1s ease, filter .2s ease, box-shadow .2s ease;
+
+}
+
+.btn--primary {
+
+  color: #fff;
+  background: linear-gradient(90deg, var(--primary-500), var(--primary-400));
+  box-shadow: 0 8px 18px rgba(77,163,255,0.35);
+
+}
+
+.btn--primary:hover { filter: brightness(1.05); }
+.btn--primary:active { transform: translateY(1px); }
+
 
 /* ===============================
    🎯 DESAFIO 5 (CSS)
    👉 Estilizar filtros
 =============================== */
+
 .filters {
-    margin: 20px 0;
+
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+
 }
+
+.btn--filter {
+
+  padding: 10px 16px; /* override do .btn */
+  border-radius: 12px;
+  border: 1px solid var(--input-border);
+  background: var(--surface);
+  color: var(--text-900);
+  font-size: 14px;
+  box-shadow: none;
+
+}
+
+.btn--filter:hover {
+
+  border-color: var(--primary-500);
+  box-shadow: var(--shadow-sm);
+
+}
+
+.btn--filter.is-active {
+
+  background: linear-gradient(90deg, var(--primary-500), var(--primary-400));
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 8px 18px rgba(77,163,255,0.35);
+
+}
+
 
 /* ===============================
    🎯 DESAFIO 6 (CSS)
    👉 Estilizar tarefas
 =============================== */
-.tasks {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+
+.task-list { /* wrapper */ }
+
+.task-list__ul {
+
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
 }
 
-.task {
-    padding: 10px;
-    border: 1px solid #ccc;
+.task-item {
+
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+  cursor: pointer;
+
 }
 
-/* Classe importante (JS usa!) */
-.completed {
-    text-decoration: line-through;
-    opacity: 0.6;
+.task-item:hover {
+
+  transform: translateX(5px);
+  border-color: var(--primary-500);
+  box-shadow: 0 8px 18px rgba(77,163,255,0.18);
+
 }
+label
