@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Todo List</title>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- ===============================
+        HEADER
+        =============================== -->
+        <header class="header">
+            <h1 class="header-title">Todo list</h1>
+            <p class="header-subtitle">
+                Organize suas tarefas de forma moderna e eficiente
+            </p>
+        </header>
+
+        <!-- ===============================
+        CARDS (TOTAL / ATIVAS / COMPLETAS)
+        =============================== -->
+        <section class="stats-cards">
+            <div class="card card-total">
+                <h2 class="card-number">0</h2>
+                <p class="card-label">Total</p>
+            </div>
+
+            <div class="card card-active">
+                <h2 class="card-number">0</h2>
+                <p class="card-label">Ativas</p>
+            </div>
+
+            <div class="card card-completed">
+                <h2 class="card-number">0</h2>
+                <p class="card-label">Completas</p>
+            </div>
+        </section>
+
+        <!-- ===============================
+        ADD TASK
+        =============================== -->
+        <section class="add-task">
+            <form class="add-task-form">
+                <input 
+                    type="text" 
+                    class="add-task-input"
+                    placeholder="Digite uma nova tarefa"
+                >
+                <button type="submit" class="add-task-button">
+                    + Adicionar
+                </button>
+            </form>
+        </section>
+
+        <!-- ===============================
+        FILTROS
+        =============================== -->
+        <nav class="filters">
+            <button class="filter-btn filter-all">Todas</button>
+            <button class="filter-btn filter-active">Ativas</button>
+            <button class="filter-btn filter-completed">Completas</button>
+        </nav>
+
+        <!-- ===============================
+        LISTA DE TAREFAS
+        =============================== -->
+        <section class="task-list">
+            <ul class="tasks">
+                <li class="task-item">Tarefa 1</li>
+                <li class="task-item">Tarefa 2</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <script src="script.js"> </script>
+
+</body>
+</html>

@@ -1,0 +1,451 @@
+/* ===============================
+   RESET (PRONTO)
+=============================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+}
+
+/* ===============================
+   🎯 DESAFIO 2 (CSS)
+   👉 Criar variáveis de cor
+=============================== */
+
+:root {
+
+  /* Paleta azul */
+  --bg: #0f172a;              /* azul marinho profundo (fundo) */
+  --surface: #111827;         /* superfície levemente destacada */
+  --elev-1: #0b1220;          /* camadas elevadas (cards/nav) */
+  --elev-2: #0d1426;
+
+  --primary-300: #4c78ff;     /* estados hover/foco */
+  --primary-400: #3d66f0;
+  --primary-500: #2f54e3;     /* botões/foco principal */
+  --primary-600: #2547c9;     /* active */
+  --primary-700: #1e3aa3;     /* bordas/acento forte */
+
+  --accent: #22d3ee;          /* detalhe sutil (linhas/realces) */
+  --success: #00c16a;         /* completas */
+  --warning: #ffd166;
+
+  --text: #e5e7eb;            /* texto padrão */
+  --muted: #9ca3af;           /* texto secundário */
+  --divider: #1f2937;         /* separadores e bordas */
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.35);
+
+  --focus: 0 0 0 3px rgba(76, 120, 255, 0.45);
+  --transition: 160ms ease;
+}
+
+/* ===============================
+   BODY (PRONTO)
+=============================== */
+
+
+body {
+  margin: 0;
+  font-family: "Roboto Mono", monospace;
+  color: var(--text);
+
+  /* Imagem local + overlay azul opaco */
+  background:
+    linear-gradient(
+      rgba(15, 23, 42, 0.78),
+      rgba(15, 23, 42, 0.78)
+    ),
+    url("/specification/assets/background.png") center / cover no-repeat fixed;
+
+  min-height: 100vh;
+}
+
+
+
+/* ===============================
+   CONTAINER (BASE PRONTA)
+=============================== */
+
+.container {
+
+  max-width: 700px;        /* ESPECIFICAÇÃO */
+  margin: 52px auto;
+  padding: 25px;           /* ESPECIFICAÇÃO */
+  border-radius: var(--radius-container); /* ESPECIFICAÇÃO */
+  background: linear-gradient(180deg, rgba(17,24,39,.85), rgba(13,20,38,.85));
+  border: 1px solid var(--divider);
+  box-shadow: var(--shadow-sm);
+
+}
+
+
+/* ===============================
+   🎯 DESAFIO 3 (CSS)
+   👉 Estilizar HEADER
+=============================== */
+
+.header { 
+    
+    text-align: center; margin-bottom: 20px; 
+
+}
+.header-title {
+
+  margin: 0 0 6px;
+  font-size: clamp(28px, 3.4vw, 38px);
+  font-weight: 800;
+  background: linear-gradient(180deg, #eaf2ff 0%, #a5b4fc 60%, #7aa2ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+}
+.header-subtitle { margin: 0 auto; color: var(--muted); max-width: 520px; }
+
+
+/* ===============================
+   🎯 DESAFIO 4 (CSS)
+   👉 Criar layout dos CARDS
+=============================== */
+.stats-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px; 
+  margin: 20px 0 16px;
+}
+
+
+.card {
+
+  background: linear-gradient(180deg, var(--elev-1), var(--elev-2));
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-16);
+  padding: 16px;                
+  transition: transform var(--t), border-color var(--t), box-shadow var(--t);
+
+}
+
+.card:hover {
+
+  transform: translateY(-2px);
+  border-color: rgba(61, 102, 240, .35);
+  box-shadow: var(--shadow-md);
+
+}
+
+.card-number {
+
+  margin: 0;
+  font-size: clamp(26px, 4vw, 36px);
+  font-weight: 800;
+  color: #dfe7ff;
+
+}
+
+.card-label {
+
+  margin: 6px 0 0;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 13px;
+
+}
+
+
+
+/* ===============================
+   ADD TASK (BASE)
+=============================== */
+
+.add-task {
+
+  margin-top: 16px;
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-16);
+  padding: 16px;
+  background: linear-gradient(180deg, rgba(17,24,39,.65), rgba(13,20,38,.65));
+
+}
+
+.add-task-form {
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px; 
+
+}
+
+.add-task-input {
+
+  background: #0c1426;
+  color: var(--text);
+  border: 1px solid #1c2742;
+  border-radius: var(--radius-12);
+  padding: 14px; 
+  outline: none;
+  transition: border-color var(--t), box-shadow var(--t), background var(--t);
+
+}
+
+.add-task-input::placeholder { 
+    
+    color: #7d88ad; 
+}
+
+.add-task-input:focus {
+
+  border-color: var(--primary-400);
+  box-shadow: var(--focus);
+  background: #0b1322;
+
+}
+
+.add-task-button {
+
+  border: 0;
+  border-radius: var(--radius-12);      
+  padding: 14px 20px;                   
+  font-weight: 800;
+  color: #f8fafc;
+  cursor: pointer;
+  background: linear-gradient(90deg, var(--primary-500), var(--primary-700));
+  transition: transform var(--t), box-shadow var(--t), filter var(--t), background var(--t);
+  white-space: nowrap;
+
+}
+
+.add-task-button:hover {
+
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow: 0 10px 24px rgba(47,84,227,.35);
+
+}
+
+.add-task-button:active {
+
+  transform: translateY(0);
+  background: linear-gradient(90deg, var(--primary-600), var(--primary-700));
+
+}
+
+
+/* ===============================
+   🎯 DESAFIO 5 (CSS)
+   👉 Estilizar filtros
+=============================== */
+
+.filters {
+
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-12);   /* ESPECIFICAÇÃO */
+  padding: 10px 16px;                /* ESPECIFICAÇÃO */
+  background: linear-gradient(180deg, #0b1220, #0a1120);
+  margin: 20px 0 12px;
+
+}
+
+
+
+.filters {
+  display: flex;
+  justify-content: center;     /*  Botões no meio  */
+  align-items: center;
+  gap: 16px;                   
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-12);
+  padding: 12px 16px;
+  background: linear-gradient(180deg, #0b1220, #0a1120);
+  margin: 20px 0 12px;
+}
+
+
+.filter-btn {
+  width: 120px;               /* Tamanhos iguais */
+  text-align: center;
+
+  background: #0f1a33;
+  border: 1px solid #1b2a4a;
+  color: #cfd8ff;
+  padding: 10px 0;             /* altura consistente */
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: .3px;
+  cursor: pointer;
+  transition: 
+    background var(--t),
+    color var(--t),
+    border-color var(--t),
+    transform var(--t);
+}
+``
+
+.filter-btn:hover { background: #132247; border-color: #2a4480; }
+.filter-btn:active { transform: translateY(1px); }
+.filter-btn.active,
+
+.filter-btn[aria-pressed="true"] {
+
+  background: linear-gradient(180deg, var(--primary-500), var(--primary-700));
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 6px 14px rgba(47,84,227,.35);
+
+}
+
+
+/* ===============================
+   🎯 DESAFIO 6 (CSS)
+   👉 Estilizar tarefas
+=============================== */
+
+.task-list {
+  background: linear-gradient(180deg, rgba(11,18,32,.80), rgba(8,12,24,.80));
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-16);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.tasks { list-style: none; margin: 0; padding: 0; }
+
+.task-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* bullet | texto | ações */
+  gap: 16px;                              /* ESPECIFICAÇÃO: 16px */
+  align-items: center;
+  padding: 16px;                          /* ESPECIFICAÇÃO */
+  background: #0b1322;
+  border-bottom: 1px solid rgba(28,39,66,.7);
+  transition: transform var(--t), background var(--t), box-shadow var(--t);
+}
+
+/* “Hover move > 5px” – aplico -5px (subir) */
+.task-item:hover {
+  transform: translateY(-5px);            /* ESPECIFICAÇÃO */
+  background: #0d172e;
+  box-shadow: 0 10px 22px rgba(0,0,0,.32);
+}
+
+.task-item:last-child { border-bottom: none; }
+
+.task-text { color: #e7ecff; word-break: break-word; }
+
+/* Estado completed/active (para JS usar .is-completed/.is-active) */
+.task-item.is-completed .task-text {
+  color: #9fb0e6;
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  text-decoration-color: rgba(159,176,230,.65);
+  opacity: .85;
+}
+.task-item.is-active .task-text { color: #eaf1ff; }
+
+/* Bullet simples (pode ser substituído por checkbox) */
+.task-bullet {
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(180deg, var(--primary-500), var(--primary-700));
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #1c2742;
+}
+
+/* Checkbox estilizado (se preferir usar input) */
+.task-checkbox {
+  appearance: none;
+  width: 18px; height: 18px;
+  border: 2px solid #28407a;
+  border-radius: 4px;
+  background: #0a1224;
+  display: inline-grid;
+  place-content: center;
+  cursor: pointer;
+  transition: border-color var(--t), background var(--t), box-shadow var(--t);
+}
+.task-checkbox:focus { box-shadow: var(--focus); border-color: var(--primary-400); }
+.task-checkbox:checked {
+  background: linear-gradient(180deg, #1f9e80, #0f7f65);
+  border-color: #18a374;
+}
+.task-checkbox:checked::after {
+  content: "✓";
+  color: #eafff8;
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.task-actions { display: inline-flex; gap: 8px; }
+.task-actions .btn {
+
+  border: 1px solid #1c2c52;
+  background: #0f1a33;
+  color: #d6e0ff;
+  border-radius: var(--radius-12); 
+  padding: 8px 10px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform var(--t), background var(--t), border-color var(--t);
+
+}
+
+.task-actions .btn:hover { background: #142553; border-color: #2d4b8e; }
+.task-actions .btn--danger { border-color: #6a274a; background: #201622; color: #ffd3df; }
+.task-actions .btn--danger:hover { background: #2a1b2d; }
+.task-actions .btn--success { border-color: #1b7f63; background: #0e2a24; color: #b9ffdf; }
+.task-actions .btn--success:hover { background: #10342c; }
+
+/* =========================================
+   FORM & ACESSIBILIDADE
+========================================= */
+
+button, input, textarea { font: inherit; }
+button:focus-visible, input:focus-visible { outline: none; box-shadow: var(--focus); }
+button:disabled, input:disabled { opacity: .6; cursor: not-allowed; }
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media (max-width: 760px) {
+  .status-cards { grid-template-columns: 1fr; }
+  .add-task-form { grid-template-columns: 1fr; }
+  .filters {
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+  
+  .filters .filter-btn:nth-child(1),
+  .filters .filter-btn:nth-child(2) { margin-right: 12px; }
+
+}
+
+/* =========================================
+   REDUÇÃO DE MOVIMENTO
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  * { transition: none !important; scroll-behavior: auto !important; }
+
+}
+
+/* Classe importante (JS usa!) */
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
